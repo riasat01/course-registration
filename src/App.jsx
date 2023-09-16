@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import Cart from './component/cart/Cart'
 import Courses from './component/courses/Courses'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [remainingCreditHour, setRemainingCreditHour] = useState(20);
@@ -22,15 +24,16 @@ function App() {
       const newiDs = [...iD, id];
       setID(newiDs);
     }else if(iD.includes(id)){
-      alert('Course already exist')
+      toast('Course already exist')
     }else if(credit_hour > remainingCreditHour){
-      alert('Sorry you do not have enough credits')
+      toast('Sorry you do not have enough credits')
     }
   }
 
   return (
     <>
       <h1 className='text-center text-4xl font-bold mt-12 mb-8'>Course Registration</h1>
+      <ToastContainer />
       <main className='mx-4 md:mx-16 grid gap-6 grid-cols-1 md:grid-cols-3 lg:grid-cols-4'>
         <Courses
         handleSelect={handleSelect}
