@@ -1,25 +1,25 @@
 import PropTypes from 'prop-types';
-import {FiDollarSign} from 'react-icons/fi'
-import {BsBook} from 'react-icons/bs'
+import { FiDollarSign } from 'react-icons/fi'
+import { BsBook } from 'react-icons/bs'
 
-const Course = ({course}) => {
-    const {title, description, price, credit_hour, image} = course;
+const Course = ({ course }) => {
+    const { title, description, price, credit_hour, image } = course;
     return (
-        <div>
-            <img src={image} alt="" />
-            <h2>{title}</h2>
-            <p>{description}</p>
-            <div>
-                <div>
-                <FiDollarSign></FiDollarSign>
-                <p>Pirce : {price}</p>
+        <div className='h-fit bg-white shadow-lg rounded-lg p-6 space-y-4'>
+            <img className='h-60 w-full rounded-lg' src={image} alt="" />
+            <h2 className='text-gray-900 text-lg font-semibold'>{title}</h2>
+            <p className='text-gray-700 text-opacity-60 text-sm leading-6'>{description}</p>
+            <div className='flex justify-between items-center'>
+                <div className='flex gap-3 items-center my-3'>
+                    <FiDollarSign></FiDollarSign>
+                    <p>Price : {price}</p>
                 </div>
-                <div>
+                <div className='flex gap-3 items-center'>
                     <BsBook></BsBook>
                     <p>Credit : {credit_hour}hr</p>
                 </div>
             </div>
-            <button>Select</button>
+            <button className='w-full text-white text-lg font-semibold bg-blue-500 py-2 rounded-lg'>Select</button>
         </div>
     );
 };
