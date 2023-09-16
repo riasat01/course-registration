@@ -21,13 +21,17 @@ function App() {
       setCourseNames(newNames);
       const newiDs = [...iD, id];
       setID(newiDs);
+    }else if(iD.includes(id)){
+      alert('Course already exist')
+    }else if(credit_hour > remainingCreditHour){
+      alert('Sorry you do not have enough credits')
     }
   }
 
   return (
     <>
-      <h1>Course Registration</h1>
-      <main className='grid gap-6 grid-cols-1 md:grid-cols-3 lg:grid-cols-4'>
+      <h1 className='text-center text-4xl font-bold mt-12 mb-8'>Course Registration</h1>
+      <main className='mx-4 md:mx-16 grid gap-6 grid-cols-1 md:grid-cols-3 lg:grid-cols-4'>
         <Courses
         handleSelect={handleSelect}
         ></Courses>
