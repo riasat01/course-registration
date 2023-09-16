@@ -5,7 +5,7 @@ import { BsBook } from 'react-icons/bs'
 const Course = ({ course }) => {
     const { title, description, price, credit_hour, image } = course;
     return (
-        <div className='h-fit bg-white shadow-lg rounded-lg p-6 space-y-4'>
+        <div className='h- bg-white shadow-lg rounded-lg p-6 space-y-4'>
             <img className='h-60 w-full rounded-lg' src={image} alt="" />
             <h2 className='text-gray-900 text-lg font-semibold'>{title}</h2>
             <p className='text-gray-700 text-opacity-60 text-sm leading-6'>{description}</p>
